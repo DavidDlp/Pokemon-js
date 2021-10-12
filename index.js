@@ -20,7 +20,7 @@ const printListPokemon = (pokemons) => {
     pokemons.results.forEach((pokemon, index) => {
         console.log(pokemon.name);
         const li = document.createElement('li');
-        li.className = 'pokeCard';
+        li.className = `pokeCard`;
 
         const p = document.createElement('p')
         p.textContent = `${pokemon.name}`;
@@ -33,16 +33,31 @@ const printListPokemon = (pokemons) => {
     
         document.querySelector('#pokedex').appendChild(li);
 
-    // callPokemon (pokemon.name);
+    callPokemon (pokemon.name);
     
     });
    
 }
 
-// const callPokemon = async (name) => {
-    
+ const callPokemon = async (name) => {
+    const call = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    const pokemon = await call.json();
+    // console.log('Buscando', pokemon);
+    let {stats} = pokemon;
+    // console.log('Buscando', stats);
 
-// }
+    for (let i = 0; i < stats.length; i++) {
+        console.log(stats[i]);
+        const containerStats = document.createElement('div')
+        containerStats.className= "stats"
+        const pStats = document.createElement("p");
+        pStats.textContent = `${stats[i].stat.name}: ${stats[i].base_stat}`;
+        containerStats.appendChild(pStats);
+        document.querySelector('#pokedex').appendChild(containerStats);
+    
+    }
+
+}
 
 
 const init = async() => {
