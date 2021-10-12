@@ -5,13 +5,40 @@
 
 body {
     background-color: antiquewhite;
+    font-size: 24px;
+    padding: 25px;
+    
 }
 h1{
     text-align: center;
-    
+}
+
+.gnlContainer{
+    border: 5px solid black;
+    padding: 10px;
+    background: cadetblue;
+}
+#pokedex{
+    border: 5px solid black;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
 }
 
 .pokeCard {
     border: 2px solid black;
     border-radius: 5px 5px;
+    margin: 10px;
+    background: aqua;
+        p{
+            font-weight: bolder;
+            text-transform: capitalize;
+        }
+        img{
+            height: 120px;
+            width: 120px;
+            border: 2px solid darkgoldenrod;
+            border-radius: 50%;
+            background: aliceblue;
+        }
 }
