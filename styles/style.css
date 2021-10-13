@@ -49,11 +49,6 @@ h1 {
   height: 200px;
 }
 
-.pokedex__pokeCard p {
-  font-weight: bolder;
-  text-transform: capitalize;
-}
-
 .pokedex__pokeCard img {
   height: 120px;
   width: 120px;
@@ -62,8 +57,18 @@ h1 {
   background: aliceblue;
 }
 
-.pokedex__pokeCard--stats {
+.pokedex__pokeCard button {
   border: 1px solid black;
-  padding: 10px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: bolder;
+  -webkit-box-shadow: 2px 2px black;
+          box-shadow: 2px 2px black;
+  color: darkgoldenrod;
+}
+
+.pokedex__pokeCard button:hover {
+  font-size: 120%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

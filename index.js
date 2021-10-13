@@ -9,7 +9,7 @@ function createContainer() {
 }
 
 const getDataPokemon = async() => {
-    const result = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+    const result = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
     const listPokemon = await result.json();
     console.log('Accediendo',listPokemon);
 
@@ -22,9 +22,11 @@ const printListPokemon = (pokemons) => {
         const li = document.createElement('li');
         li.className = `pokedex__pokeCard`;
 
-        const p = document.createElement('p')
-        p.textContent = `${pokemon.name}`;
-        li.appendChild(p);
+        const button = document.createElement('button')
+        button.type = "button"
+        button.className = 'button'
+        button.textContent = `${pokemon.name}`;
+        li.appendChild(button);
     
         const img = document.createElement('img');
         img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`;

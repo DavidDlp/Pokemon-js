@@ -38,17 +38,27 @@ h1{
         width: 200px;
         height: 200px;
 
-            p{
-                font-weight: bolder;
-                text-transform: capitalize;
-            }
             img{
                 height: 120px;
                 width: 120px;
                 border: 2px solid darkgoldenrod;
                 border-radius: 50%;
                 background: aliceblue;
-            }   
+            } 
+            button{
+                border: 1px solid black;
+                border-radius: 10px;
+                text-transform: capitalize;
+                font-weight: bolder;
+                box-shadow: 2px 2px black;
+                color: darkgoldenrod;
+
+                &:hover{
+                    font-size: 120%;
+                    cursor: pointer;
+                }
+                
+            }
     }
 }
 // .stats{
