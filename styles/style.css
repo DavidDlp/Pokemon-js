@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #F6FBEF;
   font-size: 24px;
   padding: 25px;
 }
@@ -16,34 +16,54 @@ h1 {
 
 .gnlContainer {
   border: 5px solid black;
+  border-radius: 20px 20px;
   padding: 10px;
-  background: cadetblue;
+  background-color: #23022E;
 }
 
-#pokedex {
+.pokedex {
   border: 5px solid black;
+  border-radius: 20px 20px;
   padding: 30px;
-  background-color: white;
+  background-color: #ADA8B6;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.pokeCard {
+.pokedex__pokeCard {
   border: 2px solid black;
-  border-radius: 5px 5px;
-  margin: 10px;
-  background: aqua;
+  border-radius: 10px 10px;
+  margin: 20px;
+  background-color: #573280;
+  width: 200px;
+  height: 200px;
 }
 
-.pokeCard p {
+.pokedex__pokeCard p {
   font-weight: bolder;
   text-transform: capitalize;
 }
 
-.pokeCard img {
+.pokedex__pokeCard img {
   height: 120px;
   width: 120px;
   border: 2px solid darkgoldenrod;
   border-radius: 50%;
   background: aliceblue;
+}
+
+.pokedex__pokeCard--stats {
+  border: 1px solid black;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

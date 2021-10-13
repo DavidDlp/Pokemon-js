@@ -4,7 +4,7 @@ function createContainer() {
     document.body.appendChild(container);
 
     const list = document.createElement('ol');
-    list.id = 'pokedex';
+    list.className = 'pokedex';
     document.querySelector('.gnlContainer').appendChild(list);
 }
 
@@ -20,7 +20,7 @@ const printListPokemon = (pokemons) => {
     pokemons.results.forEach((pokemon, index) => {
         console.log(pokemon.name);
         const li = document.createElement('li');
-        li.className = `pokeCard`;
+        li.className = `pokedex__pokeCard`;
 
         const p = document.createElement('p')
         p.textContent = `${pokemon.name}`;
@@ -31,33 +31,33 @@ const printListPokemon = (pokemons) => {
         img.alt = pokemon.name;
         li.appendChild(img);
     
-        document.querySelector('#pokedex').appendChild(li);
+        document.querySelector('.pokedex').appendChild(li);
 
-    callPokemon (pokemon.name);
+    // callPokemon (pokemon.name);
     
     });
    
 }
 
- const callPokemon = async (name) => {
-    const call = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    const pokemon = await call.json();
-    // console.log('Buscando', pokemon);
-    let {stats} = pokemon;
-    // console.log('Buscando', stats);
+//  const callPokemon = async (name) => {
+//     const call = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+//     const pokemon = await call.json();
+//     // console.log('Buscando', pokemon);
+//     let {stats} = pokemon;
+//     // console.log('Buscando', stats);
 
-    for (let i = 0; i < stats.length; i++) {
-        console.log(stats[i]);
-        const containerStats = document.createElement('div')
-        containerStats.className= "stats"
-        const pStats = document.createElement("p");
-        pStats.textContent = `${stats[i].stat.name}: ${stats[i].base_stat}`;
-        containerStats.appendChild(pStats);
-        document.querySelector('#pokedex').appendChild(containerStats);
+//     for (let i = 0; i < stats.length; i++) {
+//         console.log(stats[i]);
+//         const containerStats = document.createElement('div')
+//         containerStats.className= "stats"
+//         const pStats = document.createElement("p");
+//         pStats.textContent = `${stats[i].stat.name}: ${stats[i].base_stat}`;
+//         containerStats.appendChild(pStats);
+//         document.querySelector('.pokedex').appendChild(containerStats);
     
-    }
+//     }
 
-}
+// }
 
 
 const init = async() => {
